@@ -23,8 +23,10 @@ io.on('connection', (socket) => {
         io.emit('operator_update', data); 
     });
 
-    socket.on('disconnect', () => {
-        console.log(`[SYSTEM] Device disconnected: ${socket.id}`);
+ const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`ATM System running on port ${PORT}`);
+});
     });
 });
 
